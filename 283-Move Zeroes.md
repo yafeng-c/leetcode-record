@@ -16,14 +16,15 @@ Minimize the total number of operations.
 我真的想不到这个题还可以用双指针解，还这么巧妙。
 ```
 var moveZeroes = function(nums) {
+    if(!nums) return 0;
     let j = 0;
     for(let i = 0; i < nums.length; i++){
         if(nums[i] !== 0){
-            if(i > j){//避免了开头元素非零，自己和自己交换的情况
+            if(i > j){
                 nums[j] = nums[i];
                 nums[i] = 0;
-                j++;
             }
+            j++;
         }
     }
     return nums;
