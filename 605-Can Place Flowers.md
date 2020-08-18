@@ -29,11 +29,12 @@ var canPlaceFlowers = function(flowerbed, n) {
             total++;
             if(total === 3){
                 cnt++;
+                total = 1;
             }
         }else{
             total = 0;
         }
     }
-    return cnt <= n;
+    return n <= cnt;
 };
 ```
